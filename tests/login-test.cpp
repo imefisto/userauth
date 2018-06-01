@@ -3,8 +3,6 @@
 #include "userauth/InMemoryUserRepository.h"
 #include "userauth/LogIn.h"
 
-using namespace std;
-
 SCENARIO( "User gets identified", "[LogInUseCase]" ) {
 
   GIVEN("A repository with users") {
