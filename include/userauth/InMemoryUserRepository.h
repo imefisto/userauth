@@ -1,7 +1,6 @@
 #ifndef IN_MEMORY_USER_REPOSITORY_H
 #define	IN_MEMORY_USER_REPOSITORY_H
 
-#include <algorithm>
 #include <vector>
 #include "userauth/User.h"
 #include "userauth/UserRepository.h"

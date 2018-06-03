@@ -1,3 +1,4 @@
+#include <sodium.h>
 #include "userauth/User.h"
 
 std::string userauth::User::getUsername() const

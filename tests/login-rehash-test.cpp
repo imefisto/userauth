@@ -1,3 +1,4 @@
+#include <sodium.h>
 #include "catch2/catch.hpp"
 #include "userauth/User.h"
 #include "userauth/InMemoryUserRepository.h"

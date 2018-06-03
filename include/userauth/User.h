@@ -2,7 +2,6 @@
 #define	USER_H
 
 #include <string>
-#include <sodium.h>
 
 namespace userauth {
 
