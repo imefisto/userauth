@@ -22,8 +22,8 @@ namespace userauth {
 
     std::string getUsername() const;
     std::string getPasswordHash() const;
-    void setPassword(std::string password);
-    bool validatePassword(std::string password) const;
+    void setPassword(const std::string& password);
+    bool validatePassword(const std::string& password) const;
     bool passwordNeedsRehash() const;
     bool isValid() const;
 

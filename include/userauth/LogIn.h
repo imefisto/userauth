@@ -14,7 +14,7 @@ namespace userauth {
       : userRepository(userRepository)
     {}
 
-    LogInResponse tryToIdentify(string username, string password);
+    LogInResponse tryToIdentify(const string& username, const string& password);
 
     private:
 

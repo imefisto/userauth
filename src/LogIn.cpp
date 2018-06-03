@@ -1,6 +1,6 @@
 #include "userauth/LogIn.h"
 
-userauth::LogInResponse userauth::LogIn::tryToIdentify(string username, string password)
+userauth::LogInResponse userauth::LogIn::tryToIdentify(const string& username, const string& password)
 {
   auto user = userRepository.ofUsername(username);
 

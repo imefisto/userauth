@@ -10,7 +10,7 @@ std::string userauth::User::getPasswordHash() const
   return passwordHash;
 }
 
-void userauth::User::setPassword(std::string password)
+void userauth::User::setPassword(const std::string& password)
 {
   char hashedPassword[crypto_pwhash_STRBYTES];
 
@@ -26,7 +26,7 @@ void userauth::User::setPassword(std::string password)
   passwordHash = hashedPassword;
 }
 
-bool userauth::User::validatePassword(std::string password) const
+bool userauth::User::validatePassword(const std::string& password) const
 {
   return 0 == crypto_pwhash_str_verify(
       passwordHash.c_str(), 

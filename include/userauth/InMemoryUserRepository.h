@@ -14,11 +14,11 @@ namespace userauth
       : users(_users)
     {}
 
-    User ofUsername(std::string username) const override;
-    void save(User user) override;
+    User ofUsername(const std::string& username) const override;
+    void save(const User& user) override;
 
     private:
-    auto findByUsername(std::string username) const;
+    auto findByUsername(const std::string& username) const;
     std::vector<User>& users;
   };
 }
