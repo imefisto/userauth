@@ -8,7 +8,7 @@
 
 namespace userauth
 {
-  struct InMemoryUserRepository : public virtual UserRepository
+  struct InMemoryUserRepository : public UserRepository
   {
     InMemoryUserRepository(std::vector<User>& _users)
       : users(_users)
