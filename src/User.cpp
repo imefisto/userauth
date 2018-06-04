@@ -43,9 +43,3 @@ bool userauth::User::passwordNeedsRehash() const
       crypto_pwhash_MEMLIMIT_INTERACTIVE
       );
 }
-
-bool userauth::User::isValid() const
-{
-  return valid;
-}
-

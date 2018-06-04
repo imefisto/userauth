@@ -12,10 +12,10 @@ namespace userauth
         );
   }
 
-  User InMemoryUserRepository::ofUsername(const std::string& username) const
+  std::optional<User> InMemoryUserRepository::ofUsername(const std::string& username) const
   {
     auto it = findByUsername(username);
-    return it != users.end() ? *it : User();
+    return it != users.end() ? std::optional<User>{*it} : std::nullopt;
   }
 
   void InMemoryUserRepository::save(const User& user)

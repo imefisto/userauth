@@ -5,7 +5,7 @@ target_include_directories(Catch INTERFACE ${CATCH_INCLUDE_DIR})
 
 set(TEST_SOURCES
 	main.cpp
-  user-validity-test.cpp
+  # user-validity-test.cpp
   user-password-validation-test.cpp
   login-test.cpp
   login-rehash-test.cpp

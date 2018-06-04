@@ -4,15 +4,15 @@ userauth::LogInResponse userauth::LogIn::tryToIdentify(const string& username, c
 {
   auto user = userRepository.ofUsername(username);
 
-  if(!user.isValid()) return {user, false};
-  
-  auto result = user.validatePassword(password);
+  if(!user) return {user, false};
 
-  if(result && user.passwordNeedsRehash())
+  auto validationResult = user->validatePassword(password);
+
+  if(validationResult && user->passwordNeedsRehash())
   {
-    user.setPassword(password);
-    userRepository.save(user);
+    user->setPassword(password);
+    userRepository.save(*user);
   }
 
-  return {user, result};
+  return {user, validationResult};
 }

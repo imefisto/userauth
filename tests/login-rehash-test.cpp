@@ -30,12 +30,12 @@ SCENARIO( "User gets identified and its password rehashed", "[LogInUseCase]" ) {
 
       THEN("The password has to be rehashed as part of the process and the changes must be saved") {
         REQUIRE(response.success);
-        REQUIRE(response.user.getPasswordHash() != poorHashedPassword);
-        REQUIRE(!response.user.passwordNeedsRehash());
+        REQUIRE(response.user->getPasswordHash() != poorHashedPassword);
+        REQUIRE(!response.user->passwordNeedsRehash());
 
         auto savedUser = userRepository.ofUsername(validUsername);
-        REQUIRE(savedUser.getPasswordHash() != poorHashedPassword);
-        REQUIRE(!savedUser.passwordNeedsRehash());
+        REQUIRE(savedUser->getPasswordHash() != poorHashedPassword);
+        REQUIRE(!savedUser->passwordNeedsRehash());
       }
     }
   }

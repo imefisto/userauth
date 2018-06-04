@@ -21,7 +21,7 @@ SCENARIO( "User gets identified", "[LogInUseCase]" ) {
 
       THEN("An unsuccessful response and an invalid user should be returned") {
         REQUIRE(!response.success);
-        REQUIRE(!response.user.isValid());
+        REQUIRE(!response.user);
       }
     }
 
@@ -30,7 +30,7 @@ SCENARIO( "User gets identified", "[LogInUseCase]" ) {
 
       THEN("A successful response with a validuser should be returned") {
         REQUIRE(response.success);
-        REQUIRE(response.user.isValid());
+        REQUIRE(!!response.user);
       }
     }
 
@@ -39,7 +39,8 @@ SCENARIO( "User gets identified", "[LogInUseCase]" ) {
 
       THEN("An unsuccessful response with valid user should be returned") {
         REQUIRE(!response.success);
-        REQUIRE(response.user.isValid());
+        REQUIRE(!!response.user);
+        REQUIRE(response.user.value().getUsername() == validUsername);
       }
     }
   }

@@ -1,6 +1,7 @@
 #ifndef IN_MEMORY_USER_REPOSITORY_H
 #define	IN_MEMORY_USER_REPOSITORY_H
 
+#include <optional>
 #include <vector>
 #include "userauth/User.h"
 #include "userauth/UserRepository.h"
@@ -13,7 +14,7 @@ namespace userauth
       : users(_users)
     {}
 
-    User ofUsername(const std::string& username) const override;
+    std::optional<User> ofUsername(const std::string& username) const override;
     void save(const User& user) override;
 
     private:
